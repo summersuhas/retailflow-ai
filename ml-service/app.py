@@ -187,5 +187,6 @@ def forecast():
 
 
 if __name__ == "__main__":
-    print("RetailFlow ML Service starting on http://localhost:8000")
-    app.run(host="0.0.0.0", port=8000, debug=False)
+    print("RetailFlow ML Service starting on http://localhost:8001")
+    app.run(host="0.0.0.0", port=8001, debug=False)
+  
