@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const api = axios.create({
-  baseURL: 'http://localhost:5001',
+  baseURL: 'https://retailflow-ai.onrender.com',
 })
 
 export default api
