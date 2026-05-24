@@ -55,8 +55,8 @@ export default function Dashboard() {
     setError('')
     try {
       const [statsRes, inventoryRes] = await Promise.all([
-        axios.get('/api/dashboard/stats'),
-        axios.get('/api/inventory'),
+        axios.get('http://localhost:5001/api/dashboard/stats'),
+  axios.get('http://localhost:5001/api/inventory'),
       ])
       setStats(statsRes.data)
       setSalesData(statsRes.data.salesTrend || [])

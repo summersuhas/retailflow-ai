@@ -32,7 +32,7 @@ export default function Forecasting() {
   useEffect(() => {
     const fetchItems = async () => {
       try {
-        const res = await axios.get('/api/inventory')
+        const res = await axios.get('http://localhost:5001/api/inventory')
         setItems(res.data)
         if (res.data.length > 0) setSelectedItem(res.data[0]._id)
       } catch (err) {
@@ -50,7 +50,10 @@ export default function Forecasting() {
     setForecast(null)
     setMlError('')
     try {
-      const res = await axios.post('/api/forecast', { itemId: selectedItem })
+      const res = await axios.post(
+        'http://localhost:5001/api/forecast',
+        { itemId: selectedItem }
+      )
       setForecast(res.data)
     } catch (err) {
       if (err.response?.status === 503) {

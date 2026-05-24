@@ -46,7 +46,7 @@ export default function Inventory() {
   const fetchItems = async () => {
     setLoading(true)
     try {
-      const res = await axios.get('/api/inventory')
+      const res = await axios.get('http://localhost:5001/api/inventory')
       setItems(res.data)
     } catch (err) {
       console.error(err)
@@ -98,9 +98,15 @@ export default function Inventory() {
     setSaving(true)
     try {
       if (editItem) {
-        await axios.put(`/api/inventory/${editItem._id}`, form)
+        await axios.put(
+          `http://localhost:5001/api/inventory/${editItem._id}`,
+          form
+        )
       } else {
-        await axios.post('/api/inventory', form)
+        await axios.post(
+          'http://localhost:5001/api/inventory',
+          form
+        )
       }
       setShowModal(false)
       fetchItems()
@@ -113,7 +119,9 @@ export default function Inventory() {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`/api/inventory/${id}`)
+      await axios.delete(
+        `http://localhost:5001/api/inventory/${id}`
+      )
       setDeleteId(null)
       fetchItems()
     } catch (err) {
