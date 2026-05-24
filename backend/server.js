@@ -27,8 +27,7 @@ app.get('/api/health', (req, res) => {
 
 // Connect to MongoDB and start server
 const PORT = process.env.PORT || 5000
-const MONGO_URI = process.env.MONGO_URI || 'your_mongodb_connection_string'
-
+const MONGO_URI = process.env.MONGO_URI
 mongoose
   .connect(MONGO_URI)
   .then(() => {
