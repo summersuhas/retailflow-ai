@@ -27,7 +27,6 @@ export default function Login() {
 
   return (
     <div className="min-h-screen bg-gray-50 flex items-center justify-center px-4">
-      <h1>NEW BUILD TEST</h1>
       <div className="w-full max-w-sm">
         {/* Logo */}
         <div className="text-center mb-8">
